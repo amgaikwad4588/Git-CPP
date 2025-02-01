@@ -1,0 +1,45 @@
+cmake_minimum_required(VERSION 3.13)
+
+project(git-starter-cpp)
+
+set(CMAKE_CXX_STANDARD 23) # Enable the C++23 standard
+
+# Set default build type to Debug if not specified
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build (Debug, Release, etc.)" FORCE)
+endif()
+
+# Debug flags: add debug symbols, disable optimizations
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
+
+# Position-independent code (required for shared libraries)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+# Set output directories for Debug and Release
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/debug)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/release)
+
+# Enable warnings and extra analysis
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
+
+# Verbose build output
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+# Find all source files
+file(GLOB_RECURSE SOURCE_FILES src/*.cpp src/*.hpp)
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/src)
+
+# Find OpenSSL
+find_package(OpenSSL REQUIRED)
+
+# Find libcurl
+find_package(CURL REQUIRED)
+
+# Add the executable
+add_executable(vest ${SOURCE_FILES})
+
+# Link libraries (zlib, OpenSSL, and libcurl)
+target_link_libraries(vest OpenSSL::Crypto -lz CURL::libcurl)

@@ -1,4 +1,4 @@
-[![progress-banner](https://backend.codecrafters.io/progress/git/8aa4872f-4077-45ef-9704-3d951e92302d)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
+[![progress-banner](https://backend.codecrafters.io/progress/git/dc8a4769-f1cd-4155-b95f-6e5a16feea4b)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
 
 This is a starting point for C++ solutions to the
 ["Build Your Own Git" Challenge](https://codecrafters.io/challenges/git).
@@ -57,4 +57,3 @@ alias mygit=/path/to/your/repo/your_program.sh
 mkdir -p /tmp/testing && cd /tmp/testing
 mygit init
 ```
-# Git-CPP

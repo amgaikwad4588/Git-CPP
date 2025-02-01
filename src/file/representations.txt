@@ -1,0 +1,11 @@
+Header:         0x7d
+Base SHA-1:     d3 e9 44 a2 ed 8d 0f 0e fc 91 7f da 26 bf b2 d8 a3 5c 7e 3b
+
+<z-lib-compressed>
+
+Base Size:      0x2b
+Result Size:    0x2e
+Copy Command:   0x85 00 14
+Add Command:    0x00 63 6c 65 76 65 72 20 63 61 74 2e
+
+<z-lib-compressed>
